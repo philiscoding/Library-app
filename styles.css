@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {}
+
+header {
+    height: 200px;
+    width: 100%;
+    background-color: #153462;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header h1 {
+    color: white;
+    font-size: 3em;
+
+}
+
+.book-btn {
+    color: #4FA095;
+    margin: 30px;
+    padding: 15px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+
+.book-btn:hover {
+    cursor: pointer;
+    background-color: #356b63;
+    color: white;
+}
+
+/* FORM AND CONTROLS */
+
+.book-form {
+    margin: 0 auto;
+    display: grid;
+    row-gap: 10px;
+    align-items: center;
+    justify-items: center;
+
+    width: 250px;
+    padding: 15px;
+    border: 5px black solid;
+    border-radius: 10px;
+    background-color: #356b63;
+    color: white;
+    ;
+}
+
+.book-form input[type=text] {
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 25px;
+    width: 200px;
+    text-align: left;
+    padding: 5px;
+}
+
+.radio-container {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-form input[type=radio] {
+    width: 80px;
+}
+
+.book-form button {
+    width: 215px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: white;
+    font-size: 1.2em;
+}
+
+.book-form button:hover {
+    cursor: pointer;
+    background-color: rgba(254, 254, 254, 0.833);
+}
+
+/* LIBRARY SECTION */
+
+.books-container {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 30px;
+
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+.book-card {
+    color: white;
+    background-color: #356b63;
+    border: 5px solid black;
+    border-radius: 10px;
+
+    height: 300px;
+    padding: 15px;
+    text-align: center;
+
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 15px;
+}
+
+.book-card h2 {
+    font-weight: bold;
+    font-size: 1.8em;
+
+}
+
+.book-card p {
+    font-size: 1.3em;
+
+}
+
+
+.book-card button {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.book-card button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.931);
+}
