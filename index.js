@@ -86,7 +86,9 @@ bookBtn.addEventListener("click", makeForm);
 function makeForm() {
 
     let bookForm = document.createElement("form");
+    let headingContainer = document.createElement("div");
     let heading = document.createElement("h2");
+    let close = document.createElement("span");
     let title = document.createElement("input");
     let author = document.createElement("input");
     let pages = document.createElement("input");
@@ -97,12 +99,15 @@ function makeForm() {
 
 
 
+
     heading.textContent = "New Book";
+    close.innerHTML = "&times";
     title.placeholder = "Title";
     author.placeholder = "Author";
     pages.placeholder = "Pages";
     readLabel.textContent = "Did you read it?";
     add.textContent = "Add";
+
 
     heading.setAttribute("type", "text");
     title.setAttribute("type", "text");
@@ -115,12 +120,17 @@ function makeForm() {
     pages.setAttribute("required", "");
     read.setAttribute("required", "");
     bookForm.classList.add("book-form");
+    headingContainer.classList.add("heading-container");
+    close.classList.add("close");
     radioContainer.classList.add("radio-container");
+    formContainer.classList.add("modal");
 
 
 
     formContainer.appendChild(bookForm);
-    bookForm.appendChild(heading);
+    bookForm.appendChild(headingContainer);
+    headingContainer.appendChild(heading);
+    headingContainer.appendChild(close);
     bookForm.appendChild(title);
     bookForm.appendChild(author);
     bookForm.appendChild(pages);
@@ -136,9 +146,24 @@ function makeForm() {
         addBookToLibrary(title.value, author.value, pages.value, read.checked);
         preventDefault(event);
         bookForm.remove();
+        formContainer.classList.remove("modal");
         toggleBtn(false, bookBtn);
         displayBooks();
 
     });
+
+    close.addEventListener("click", function () {
+        bookForm.remove();
+        formContainer.classList.remove("modal");
+        toggleBtn(false, bookBtn);
+    });
+
+    window.onclick = function (event) {
+        if (event.target == formContainer) {
+            bookForm.remove();
+            formContainer.classList.remove("modal");
+            toggleBtn(false, bookBtn);
+        }
+    }
 
 }
